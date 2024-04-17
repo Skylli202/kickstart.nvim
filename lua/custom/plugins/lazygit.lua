@@ -16,14 +16,15 @@ return {
     -- order to load the plugin when the command is run for the first time
     keys = {
       { '<leader>gg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
-      {
-        '<leader>gf',
-        function(self)
-          local git_path = vim.api.nvim_buf_get_name(0)
-          self.lazygit { args = { '-f', vim.trim(git_path) } }
-        end,
-        desc = 'LazyGit',
-      },
+      -- FIX: Stolen from LazyVim, does not work.
+      -- {
+      --   '<leader>gf',
+      --   function(self)
+      --     local git_path = vim.api.nvim_buf_get_name(0)
+      --     self.lazygit { args = { '-f', vim.trim(git_path) } }
+      --   end,
+      --   desc = 'LazyGit',
+      -- },
     },
   },
 }
